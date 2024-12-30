@@ -1,0 +1,16 @@
+import sqlite3
+
+# Create or connect to database
+conn = sqlite3.connect("students.db")  # Creates 'students.db' if not exists
+print("Database created successfully!")
+
+# Create table
+conn.execute('''
+CREATE TABLE IF NOT EXISTS STUDENTS (
+    ID INTEGER PRIMARY KEY,
+    NAME TEXT NOT NULL,
+    AGE INTEGER NOT NULL
+);
+''')
+print("Table created successfully!")
+conn.close()
